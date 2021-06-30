@@ -14,8 +14,7 @@ function fillGrid(rows, cols) {
 
 fillGrid(16, 16);
 
-var target = document.querySelector('.grid-item');
-console.log(target);
-target.addEventListener("mouseover", function(event) {
-  event.target.style.backgroundColor = "blue";
+
+container.addEventListener("mouseover", function(e) {
+  e.target.style.backgroundColor = "black";
 }, false);
