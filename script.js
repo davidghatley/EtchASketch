@@ -1,19 +1,24 @@
 var container = document.querySelector('div');
 var reset = document.querySelector('button');
+var gridSize = window.prompt("Grid size? (e.g. 4 -> 4 by 4, 10 -> 10 by 10, max 100): ");
 
-function fillGrid(rows, cols) {
-  for (var i = 0; i < (rows * cols); i++) {
+if (gridSize > 100) {
+  gridSize = 100;
+}
+
+function fillGrid(gridSize) {
+  for (var i = 0; i < (gridSize * gridSize); i++) {
     var newDiv = document.createElement('div');
     newDiv.className = 'grid-item';
     container.appendChild(newDiv);
   };
-  container.style.gridTemplateColumns = '1fr 1fr 1fr 1fr \
-                                         1fr 1fr 1fr 1fr \
-                                         1fr 1fr 1fr 1fr \
-                                         1fr 1fr 1fr 1fr';
+
+  var colSpace = '1fr '
+  console.log(colSpace);
+  container.style.gridTemplateColumns = `${colSpace.repeat(gridSize)}`;
 };
 
-fillGrid(16, 16);
+fillGrid(gridSize);
 
 container.addEventListener("mouseover", function(e) {
   e.target.style.backgroundColor = "black";
