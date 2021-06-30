@@ -1,4 +1,5 @@
 var container = document.querySelector('div');
+var reset = document.querySelector('button');
 
 function fillGrid(rows, cols) {
   for (var i = 0; i < (rows * cols); i++) {
@@ -14,7 +15,10 @@ function fillGrid(rows, cols) {
 
 fillGrid(16, 16);
 
-
 container.addEventListener("mouseover", function(e) {
   e.target.style.backgroundColor = "black";
 }, false);
+
+reset.addEventListener("click", function() {
+  window.location.reload();
+});
